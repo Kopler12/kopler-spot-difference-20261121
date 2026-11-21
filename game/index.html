@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spot the Difference — Pasar Malam Lampion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div id="brand">
+      <span id="brand-mark" aria-hidden="true">◉</span>
+      <span id="brand-name">SPOT THE DIFFERENCE</span>
+      <span id="brand-sub">Pasar Malam Lampion &amp; kawan-kawan</span>
+    </div>
+    <div id="level-dots" aria-label="Level">
+      <span class="dot" data-level="0">1</span>
+      <span class="dot" data-level="1">2</span>
+      <span class="dot" data-level="2">3</span>
+    </div>
+  </header>
+
+  <section id="hud" aria-label="Status permainan">
+    <div class="hud-box" id="hud-level">
+      <span class="hud-label">LEVEL</span>
+      <span class="hud-value" id="level-name">Pasar Malam</span>
+    </div>
+    <div class="hud-box" id="hud-found">
+      <span class="hud-label">DITEMUKAN</span>
+      <span class="hud-value"><span id="found-count">0</span><span class="hud-dim"> / 10</span></span>
+      <span class="hud-sub" id="remain-count">Sisa 10 perbedaan</span>
+    </div>
+    <div class="hud-box" id="hud-time">
+      <span class="hud-label">WAKTU</span>
+      <span class="hud-value" id="time-text">2:30</span>
+      <div id="time-bar"><div id="time-fill"></div></div>
+    </div>
+    <div class="hud-box" id="hud-score">
+      <span class="hud-label">SKOR</span>
+      <span class="hud-value" id="score-text">0</span>
+      <span class="hud-sub" id="combo-text">Kombo ×1</span>
+    </div>
+    <div class="hud-buttons">
+      <button id="hint-btn" type="button" title="Petunjuk (H)">💡 Petunjuk <b id="hint-count">3</b></button>
+      <button id="sound-btn" type="button" title="Suara (M)">♪ Suara</button>
+      <button id="restart-btn" type="button" title="Ulangi level (R)">↻ Ulangi</button>
+    </div>
+  </section>
+
+  <main id="boards">
+    <figure class="panel" id="panel-left">
+      <figcaption><span class="panel-tag">A</span> Gambar Asli</figcaption>
+      <canvas id="canvas-left" width="620" height="440"></canvas>
+    </figure>
+    <div id="vs-badge" aria-hidden="true">VS</div>
+    <figure class="panel" id="panel-right">
+      <figcaption><span class="panel-tag">B</span> Cari Bedanya!</figcaption>
+      <canvas id="canvas-right" width="620" height="440"></canvas>
+    </figure>
+  </main>
+
+  <footer id="helpbar">
+    <span>Klik perbedaan di gambar <b>A</b> atau <b>B</b> — keduanya bisa.</span>
+    <span>Klik salah: −5 detik.</span>
+    <span><b>H</b> petunjuk · <b>M</b> suara · <b>R</b> ulangi level</span>
+  </footer>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card">
+      <div id="overlay-kicker"></div>
+      <h1 id="overlay-title"></h1>
+      <p id="overlay-text"></p>
+      <div id="overlay-stats"></div>
+      <button id="overlay-btn" type="button"></button>
+      <p id="overlay-hint"></p>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
